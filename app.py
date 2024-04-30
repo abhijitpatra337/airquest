@@ -1,5 +1,4 @@
 import streamlit as st
-import plotly.graph_objects as go 
 from datetime import datetime
 import pytz
 from streamlit_option_menu import option_menu
