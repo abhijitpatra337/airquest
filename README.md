@@ -1,5 +1,5 @@
 1. install the necessary packages:
-   ** pip install streamlit
+  ** pip install streamlit
    pip install streamlit-option-menu 
    pip install psycopg2
    pip install python-dotenv**
