@@ -1,6 +1,6 @@
-!pip install streamlit-option-menu 
-!pip nstall psycopg2
-!pip install python-dotenv
+pip install streamlit-option-menu 
+pip nstall psycopg2
+pip install python-dotenv
 
 import streamlit as st
 from datetime import datetime
