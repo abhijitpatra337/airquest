@@ -87,7 +87,7 @@ def insert_airport_details(conn, airport_code, airport_name, city, airport_timez
         return False
 
 
-def insert_aircraft_details(conn, aircraft_code, model, range):
+def insert_aircraft_details(conn, aircraft_code, model, aircraft_range):
     try:
         if conn is None:
             print("Database connection is not established.")
@@ -101,7 +101,7 @@ def insert_aircraft_details(conn, aircraft_code, model, range):
                                     VALUES (%s, %s, %s)"""
 
         # Execute the INSERT statement
-        cursor.execute(postgres_insert_query, (aircraft_code, model, range))
+        cursor.execute(postgres_insert_query, (aircraft_code, model, aircraft_range))
 
         # Commit the changes to the database
         conn.commit()
@@ -112,7 +112,7 @@ def insert_aircraft_details(conn, aircraft_code, model, range):
         return True  # Return True if insertion is successful
     
     except (Exception, psycopg2.DatabaseError) as error:
-        print("Error while inserting airport details:", error)
+        print("Error while inserting aircraft details:", error)
         return False
     
 #fetch query

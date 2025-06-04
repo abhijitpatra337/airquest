@@ -169,21 +169,21 @@ if nav_bar == "Aircraft Details":
     with st.form("aircrafts_form", clear_on_submit=True):
         aircraft_code = st.text_input(label="Aircraft Code:", value="")
         model = st.text_input(label="Aircraft Model:", value="")
-        range = st.text_input(label="Range:", value="")
+        aircraft_range = st.text_input(label="Range:", value="")
 
         "---"
         aircraft_submit = st.form_submit_button("Save Aircraft")
         if aircraft_submit:
             st.write("Aircraft Code:",aircraft_code)
             st.write("Aircraft Model:", model)
-            st.write("Range:", range)
+            st.write("Range:", aircraft_range)
             #connect to database
             conn = connect_to_database()
             if conn is None:
                 st.error("Failed to connect to the database.")
             else:
                 # Save flight details to the database
-                if insert_aircraft_details(conn, aircraft_code, model, range):
+                if insert_aircraft_details(conn, aircraft_code, model, aircraft_range):
                     st.success("Aircraft details saved!")
                 else:
                     st.error("Failed to save aircraft details. Please try again later.")
